@@ -1,11 +1,13 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import {useQuery} from 'react-query'
 import axios from 'axios'
 import ProductCard from './ProductCard';
+import { useSelector } from 'react-redux';
 
 const Cards = () => {
+
+  const items=useSelector((state)=>state.cart.items)
+
   async function fetchProducts(){
     const {data} = await axios.get('https://fakestoreapi.com/products')    
     return data
