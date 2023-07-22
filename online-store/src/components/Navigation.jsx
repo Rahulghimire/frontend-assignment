@@ -6,9 +6,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 const Navigation = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary"  bg="dark" data-bs-theme="dark">
+    <Navbar expand="lg" className="bg-body-tertiary py-3 shadow-sm"  bg="light" data-bs-theme="light">
     <Container fluid>
-      <Navbar.Brand href="#">Online Store</Navbar.Brand>
+      <Navbar.Brand href="/">Online Store</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -16,7 +16,7 @@ const Navigation = () => {
           style={{ maxHeight: '100px' }}
           navbarScroll
         >
-          <Nav.Link href="#">Home</Nav.Link>
+          <Nav.Link href="/" active>Home</Nav.Link>
         </Nav>
         <Form className="d-flex">
           <Form.Control
