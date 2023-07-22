@@ -4,11 +4,13 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import cartLogo from "../assets/cart.png";
+
 const Navigation = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary py-3 shadow-sm"  bg="light" data-bs-theme="light">
+    <Navbar expand="lg" className="bg-body-tertiary py-3 px-1 shadow-sm"  bg="light" data-bs-theme="light">
     <Container fluid>
-      <Navbar.Brand href="/">Online Store</Navbar.Brand>
+      <Navbar.Brand href="/" className='font-weight-bold'>OnlineStore</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
         <Nav
@@ -26,7 +28,11 @@ const Navigation = () => {
             aria-label="Search"
           />
           <Button variant="outline-success">Search</Button>
+          <Nav.Link href="/cart" className='mx-3 position-relative'><img src={cartLogo} alt="cart" width={40} height={40}  />
+        <span className='position-absolute top-0 right-0'>0</span>
+        </Nav.Link>
         </Form>
+       
       </Navbar.Collapse>
     </Container>
   </Navbar>

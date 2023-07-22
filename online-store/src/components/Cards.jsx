@@ -19,7 +19,7 @@ const Cards = () => {
   }
 
   return (
-    <div className='d-flex gap-4 py-4 flex-wrap justify-content-around' style={{ backgroundColor: '#f0f0f0' }}>
+    <div className='d-flex gap-4 py-4 px-1 flex-wrap justify-content-around' style={{ backgroundColor: '#f8f9fa' }}>
       {data.map((product) => (
         <ProductCard key={product.id} {...product} />
       ))}
