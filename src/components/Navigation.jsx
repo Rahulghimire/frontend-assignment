@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -6,9 +6,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import cartLogo from "../assets/cart.png";
 import { useSelector,useDispatch } from 'react-redux'
-
+import { getCartTotal } from '../features/cartSlice';
 const Navigation = () => {
-  const {totalQuantity,totalPrice}=useSelector((state)=>state.cart);
+  const {carts,totalQuantity,totalPrice}=useSelector((state)=>state.cart);
+
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(getCartTotal());
+  },[carts])
+
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary py-3 px-1 shadow-sm"  bg="light" data-bs-theme="light">

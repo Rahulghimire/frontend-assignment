@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { getCartTotal } from '../features/cartSlice';
 const CartPage = () => {
   const dispatch=useDispatch();
   const {carts,totalQuantity,totalPrice}=useSelector((state)=>state.cart);
+  useEffect(()=>{
   dispatch(getCartTotal());
-  
+  },[carts]);
+
   return (
     <div>
       <section className="h-100"  style={{backgroundColor:'#eee'}}>
